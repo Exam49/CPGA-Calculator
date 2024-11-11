@@ -33,7 +33,7 @@ def result():
           if is_number(credit_1 + credit_2 + credit_3 + credit_4 + gpa_1 + gpa_2 + gpa_3 + gpa_4):
 
               if float(credit_1 + credit_2 + credit_3 + credit_4 + gpa_1 + gpa_2 + gpa_3 + gpa_4) == 0:
-                  return render_template('result.html', total_cgpa=cgpa, total_gpa=0)
+                  return render_template('index.html', total_cgpa=cgpa, total_gpa=0)
               else:
                   credit = float(credit)
                   cgpa = float(cgpa)
@@ -58,11 +58,11 @@ def result():
 
                   result_gpa = cur_sum / cur_credit
                   final_result = total_sum / total_credit
-                  return render_template('result.html', total_cgpa=round(final_result, 2), total_gpa=round(result_gpa, 4))
+                  return render_template('index.html', total_cgpa=round(final_result, 2), total_gpa=round(result_gpa, 4))
           else:
-              return render_template('result.html', total_cgpa="NaN", total_gpa="NaN")
+              return render_template('index.html', total_cgpa="NaN", total_gpa="NaN")
       else:
-          return render_template('result.html', total_cgpa="NaN", total_gpa="NaN")
+          return render_template('index.html', total_cgpa="NaN", total_gpa="NaN")
 
 if __name__ == '__main__':
     app.run(debug=True)
